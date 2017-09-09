@@ -35,6 +35,7 @@
                     <li class="active list"><a href="games.jsp" title="游戏中心" class="nt "><span>游戏中心</span><i>游戏中心</i></a></li>
                     <li class="active list"><a href="jfcl.jsp" title="纠纷处理" class="nt "><span>纠纷处理</span><i>纠纷处理</i></a></li>
                     <li class="active list"><a href="custody.jsp" title="家长监护" class="nt "><span>家长监护</span><i>家长监护</i></a></li>
+                    <li class="active list"><a href="register_host.jsp" title="我要当主播" class="nt "><span>我要当主播</span><i>我要当主播</i></a></li>
                     <li class="active list"><a href="login.jsp" title="登录&nbsp;|&nbsp;注册" class="nt "><span>登录&nbsp;|&nbsp;注册</span><i>登录&nbsp;|&nbsp;注册</i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

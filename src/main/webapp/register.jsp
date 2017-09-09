@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <link rel="stylesheet" type="text/css" href="./css/metinfo(2).css">
     <link rel="stylesheet" type="text/css" href="./css/metinfo(1).css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     </head>
 
 <body>
@@ -37,21 +38,26 @@
         <form class="form-register met-form bv-form" novalidate="novalidate">
 
 
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">会员名</span>
-                    <input id="username" type="text" name="username" required="" class="form-control" data-bv-remote="true" data-bv-remote-url="https://show.metinfo.cn/muban/res013/323/member/register_include.php?lang=cn&amp;a=douserok" data-bv-remote-message="用户名已存在" data-bv-notempty="true" data-bv-notempty-message="此项不能为空" data-bv-stringlength="true" data-bv-stringlength-min="2" data-bv-stringlength-max="30" data-bv-stringlength-message="用户名必须在2-30个字符之间" data-bv-field="username">
-
+            <div class="form-group met-form-choice" id="usernameWrapper">
+                <div class="row">
+                    <div class="met-form-file-title col-md-3">用户名</div>
+                    <div class="col-md-9">
+                        <input id="username" type="text" name="username" class="form-control" value="" placeholder="用户名">
+                        <span class="help-block">请输入用户名</span>
+                    </div>
                 </div>
-                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="username" data-bv-result="NOT_VALIDATED" style="display: none;">此项不能为空</small><small class="help-block" data-bv-validator="remote" data-bv-for="username" data-bv-result="NOT_VALIDATED" style="display: none;">用户名已存在</small><small class="help-block" data-bv-validator="stringLength" data-bv-for="username" data-bv-result="NOT_VALIDATED" style="display: none;">用户名必须在2-30个字符之间</small></div>
+            </div>
 
 
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">密码</span>
-                    <input id="password" type="password" name="password" required="" class="form-control" data-bv-notempty="true" data-bv-notempty-message="此项不能为空" data-bv-identical="true" data-bv-identical-field="confirmpassword" data-bv-identical-message="两次密码输入不一致" data-bv-stringlength="true" data-bv-stringlength-min="6" data-bv-stringlength-max="30" data-bv-stringlength-message="密码必须在6-30个字符之间" data-bv-field="password">
+            <div class="form-group met-form-choice" id="passwordWrapper">
+                <div class="row">
+                    <div class="met-form-file-title col-md-3">密码</div>
+                    <div class="col-md-9">
+                        <input id="password" type="text" name="password" class="form-control" value="" placeholder="密码">
+                        <span class="help-block">请输入密码</span>
+                    </div>
                 </div>
-                <small class="help-block" data-bv-validator="identical" data-bv-for="password" data-bv-result="NOT_VALIDATED" style="display: none;">两次密码输入不一致</small><small class="help-block" data-bv-validator="notEmpty" data-bv-for="password" data-bv-result="NOT_VALIDATED" style="display: none;">此项不能为空</small><small class="help-block" data-bv-validator="stringLength" data-bv-for="password" data-bv-result="NOT_VALIDATED" style="display: none;">密码必须在6-30个字符之间</small></div>
+            </div>
 
 
             <div class="form-group met-more text-muted">
@@ -62,11 +68,12 @@
 
 
 
-            <div class="form-group met-form-choice">
+            <div class="form-group met-form-choice" id="info_100Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">真实姓名</div>
                     <div class="col-md-9">
                         <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名">
+                        <span class="help-block">请输入真实姓名</span>
                     </div>
                 </div>
             </div>
@@ -79,11 +86,12 @@
 
 
 
-            <div class="form-group met-form-choice">
+            <div class="form-group met-form-choice" id="info_103Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">身份证号</div>
                     <div class="col-md-9">
                         <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号">
+                        <span class="help-block">请输入合法身份证号</span>
                     </div>
                 </div>
             </div>
@@ -96,11 +104,12 @@
 
 
 
-            <div class="form-group met-form-choice">
+            <div class="form-group met-form-choice" id="info_106Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">手机号</div>
                     <div class="col-md-9">
                         <input id="info_106" type="text" name="info_106" class="form-control" value="" placeholder="手机号">
+                        <span class="help-block">请输入手机号</span>
                     </div>
                 </div>
             </div>
@@ -113,11 +122,33 @@
 
 
 
-            <div class="form-group met-form-choice">
+            <div class="form-group met-form-choice" id="info_109Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">邮箱</div>
                     <div class="col-md-9">
                         <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱">
+                        <span class="help-block">请输入邮箱</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group met-form-choice" id="info_110Wrapper">
+                <div class="row">
+                    <div class="met-form-file-title col-md-3" style="position: relative;">
+                        <input type="checkbox" style="position: absolute;top:0;right: 0;">
+                    </div>
+                    <div class="col-md-9">
+                        我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+
+                        </label>
                     </div>
                 </div>
             </div>
@@ -136,44 +167,17 @@
 
 </footer>
 <script src="./js/jquery-3.2.1.js"></script>
+<script src="./js/input_check.js"></script>
 <script>
 
-    function sitt() {
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var info_100 = $("#info_100").val();
-        var info_103 = $("#info_103").val();
-        var info_106 = $("#info_106").val();
-        var info_109 = $("#info_109").val();
-        if(username==''||username==null){
-            alert('用户名不能为空！');
-            return;
-        }
-        if(password==''||password==null){
-            alert('密码不能为空！');
-            return;
-        }
-        if(info_100==''||info_100==null){
-            alert('真实姓名不能为空！');
-            return;
-        }
-        if(info_103.length!=18){
-            alert('身份证号格式不正确！');
-            return;
-        }
-        if(info_106.length!=11){
-            alert('手机号格式不正确！');
-            return;
-        }
-        if(info_109==''||info_109==null){
-            alert('邮箱不能为空！');
-            return;
-        }
-        if(!new RegExp(info_109).test('@')){
-            alert('邮箱格式不正确！');
-            return;
-        }
-        alert("注册完成，请等待信息验证！");
-    }
+    $(function () {
+        addHelper('username');
+        addHelper('password');
+        addHelper('info_100');
+        addHelper('info_103','idCard');
+        addHelper('info_106');
+        addHelper('info_109');
+    });
+
 </script>
 </body></html>

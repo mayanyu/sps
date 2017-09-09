@@ -43,8 +43,22 @@
 
             //发言
             var msgContainer = $('#msgBox');
+            var forbiddenWords = ['sb','SB','傻逼','习近平'];
+            var makeChar = function (len) {
+                var char = '*'
+              for(var i=0;i<len-1;i++){
+                  char+='*';
+              }
+              return char;
+            };
             $('#send_msg').click(function () {
                 var value = $('#msg').val();
+                for(var i=0;i<forbiddenWords.length;i++){
+                    if(value.indexOf(forbiddenWords[i])!=-1){
+                        var len = forbiddenWords[i].length;
+                        value.replace(forbiddenWords[i],makeChar(len));
+                    }
+                }
                 var msg = '<li><span class="m_chat_content_detail_item_from">匿名：</span>' + value + '</li>'
                 msgContainer.append(msg);
             });

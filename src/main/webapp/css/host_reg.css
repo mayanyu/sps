@@ -1,0 +1,60 @@
+.host_info{
+    width:800px;
+    margin:0 auto;
+}
+
+.host_info td{
+    padding:5px;
+}
+
+.host_info td:nth-child(2n+1){
+    text-align: center;
+}
+
+.host_info td input{
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:1px solid black;
+    height:30px;
+    line-height:30px;
+    padding-left:10px;
+    outline:none;
+}
+
+.host_info td.error span{
+    display: inline;
+}
+
+.host_info td span{
+    color: red;
+    font-size:12px;
+    margin-left:5px;
+    display:none;
+}
+
+
+
+.d1{
+    width:100px;
+}
+
+.d2{
+    width:300px;
+}
+
+a.reg{
+    display: block;
+    height: 30px;
+    line-height: 22px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: red;
+    background-color: yellow;;
+    width:100px;
+    border-radius: 15px;
+    padding:5px;
+    margin:20px auto;
+}
