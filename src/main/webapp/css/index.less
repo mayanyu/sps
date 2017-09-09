@@ -1,0 +1,105 @@
+body{
+  background-color: #f0f0f0;;
+}
+
+.wrapper{
+  width:1200px;
+  margin:30px auto;
+}
+
+.m_type{
+  width:100%;
+  background-color: #ffffff;
+}
+
+.m_type_title{
+  padding:16px 16px 8px 16px;
+  font-size:20px;
+  font-weight:800;
+  border-bottom: 1px solid #f3f4f8;;
+}
+
+.m_type_item_box{
+  padding-left:20px;
+  padding-bottom:20px;
+
+  ul{
+    list-style-type: none;
+    padding-left:0;
+    li{
+      float: left;
+      width: 275px;
+      margin: 20px 20px 0 0;
+      cursor: pointer;
+
+      a{
+        display: block;
+        text-decoration:none;
+        color: #000;
+      }
+    }
+  }
+}
+
+
+.m_type_item_pic_box {
+  position: relative;
+
+  &:hover{
+    b{
+      opacity: 1;
+    }
+  }
+
+  b{
+    position: absolute;
+    display: block;
+    height:50px;
+    width:50px;
+    top:50%;
+    left:50%;
+    margin-left:-25px;
+    margin-top:-25px;
+    background: url(../img/play-bj.png);
+    opacity: 0;
+  }
+}
+.m_type_item_pic_main{
+  width:275px;
+  height:157px;
+}
+.m_type_item_info{
+  padding-top:12px;
+  height:62px;
+  text-align: center;
+  font-size:14px;
+}
+
+.m_type_info_author{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:40px;
+  line-height:40px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.m_type_info_author_photo{
+  height:26px;
+  width:26px;
+  border-radius: 50%;
+  margin-left:15px;
+  /*margin-top:7px;*/
+}
+
+.m_type_info_author_name{
+  color: #ffffff;
+  margin-left:5px;
+}
+
+.m_type_info_look_count{
+  font-size:12px;
+  color: #818181;
+}
+

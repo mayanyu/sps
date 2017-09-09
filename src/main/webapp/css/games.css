@@ -1,0 +1,17 @@
+.m_download_btn {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  background-color: red;
+  text-decoration: none;
+  width: 100px;
+  border-radius: 18px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  margin-top: -6px;
+}
+.m_download_btn:hover {
+  color: #ffff00;
+}
