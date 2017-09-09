@@ -42,10 +42,10 @@
             </div>
             <div class="form-group">
                 <label for="content">内容</label>
-                <textarea id="content" class="form-control" rows="10"></textarea>
+                <textarea id="content" class="form-control" rows="10" placeholder="投诉内容"></textarea>
             </div>
             <div style="text-align: center">
-                <button type="submit" class="btn btn-info">提交</button>
+                <button id="submit" type="button" class="btn btn-info">提交</button>
             </div>
         </form>
         <p style="text-align: center;">
@@ -59,4 +59,12 @@
     <p>北京领客先行科技有限公司&nbsp;&nbsp;&nbsp;京ICP备16037571号-1 </p>
 
 </footer>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+       $('#submit').click(function () {
+           alert('投诉已提交，谢谢反馈');
+       });
+    });
+</script>
 </body></html>
