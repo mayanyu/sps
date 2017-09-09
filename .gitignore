@@ -1,0 +1,17 @@
+# Maven #
+target/
+
+# IDEA #
+.idea/
+*.iml
+src/main/webapp/doc
+# Eclipse #
+.settings/
+.classpath
+.project
+
+# jrebel #
+src/main/resources/rebel.xml
+.DS_Store
+.gitignore
+sps.iml
