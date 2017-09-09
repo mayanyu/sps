@@ -1,0 +1,49 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.mgt5 {
+  margin-top: 5px;
+}
+.pd10 {
+  padding: 10px;
+}
+.cls-a {
+  text-decoration: none;
+  color: #000;
+}
+.cls-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.w70 {
+  width: 70px;
+}
+.w100p {
+  width: 100%;
+}
+.wrapper {
+  width: 1200px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  min-height: 500px;
+  padding: 10px;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #f0f0f0;
+}
+.ul_rest {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.b_center {
+  margin: 0 auto;
+}
