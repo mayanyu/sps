@@ -1,4 +1,4 @@
-package ctl;
+package com.ctl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
