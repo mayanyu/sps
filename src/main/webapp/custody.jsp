@@ -2,6 +2,7 @@
 <html>
 <%@include file="common.jsp"%>
 <body>
+<link rel="stylesheet" type="text/css" href="./css/custody.css">
 <%@include file="head.jsp"%>
 <div class="wrapper clearfix">
     <div class="m_content fl clearfix">

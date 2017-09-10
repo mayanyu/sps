@@ -2,6 +2,7 @@
 <html>
 <%@include file="common.jsp"%>
 <body>
+<link rel="stylesheet" type="text/css" href="./css/about.css">
 <%@include file="head.jsp"%>
 <div class="wrapper pd10 m_main">
         <h1 class="m_title">关于我们 <span>About</span></h1>

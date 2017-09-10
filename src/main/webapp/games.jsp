@@ -2,6 +2,7 @@
 <html>
 <%@include file="common.jsp"%>
 <body>
+<link rel="stylesheet" href="./css/games.css">
 <%@include file="head.jsp"%>
 <section class="md_show md_news" >
     <div class="container">

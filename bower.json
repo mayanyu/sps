@@ -1,0 +1,17 @@
+{
+  "name": "sps",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "pws019 <510114321@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mayanyu/sps",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
