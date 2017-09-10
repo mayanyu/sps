@@ -75,15 +75,17 @@
 
 <div class="register_index met-member">
     <div class="container">
-        <form class="form-register met-form bv-form" novalidate="novalidate">
+        <form id="reg_form" class="form-register met-form bv-form" novalidate="novalidate">
 
 
             <div class="form-group met-form-choice" id="info_100Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">真实姓名</div>
                     <div class="col-md-9">
-                        <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名">
-                        <span class="help-block">请输入真实姓名</span>
+                        <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
+                               data-bv-message="真实姓名输入有误"
+                               required
+                               data-bv-notempty-message="请输入真实姓名" />
                     </div>
                 </div>
             </div>
@@ -100,8 +102,13 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">身份证号</div>
                     <div class="col-md-9">
-                        <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号">
-                        <span class="help-block">实名验证未通过</span>
+                        <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号"
+                               data-bv-message="身份证号输入有误"
+                               required
+                               data-bv-notempty-message="请输入身份证号"
+                               pattern="(^\d{15}$)|(^\d{17}([0-9]|X)$)"
+                               data-bv-regexp-message="实名认证未通过"   />
+
                     </div>
                 </div>
             </div>
@@ -118,8 +125,13 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">手机号</div>
                     <div class="col-md-9">
-                        <input id="info_106" type="text" name="info_106" class="form-control" value="" placeholder="手机号">
-                        <span class="help-block">请输入手机号</span>
+                        <input id="info_106" type="text" name="info_106" class="form-control" value="" placeholder="手机号"
+                               data-bv-message="手机号输入有误"
+                               required
+                               data-bv-notempty-message="请输入手机号"
+                               data-bv-regexp-message="手机号格式错误"
+                               pattern="^1[34578]\d{9}$"
+                        >
                     </div>
                 </div>
             </div>
@@ -136,18 +148,27 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">邮箱</div>
                     <div class="col-md-9">
-                        <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱">
-                        <span class="help-block">请输入邮箱</span>
+                        <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱"
+                               data-bv-message="邮箱输入有误"
+                               required
+                               data-bv-notempty-message="请输入邮箱"
+                               data-bv-regexp-message="邮箱格式错误"
+                               pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"
+
+                        >
                     </div>
                 </div>
             </div>
 
-            <div class="form-group met-form-choice" id="info_107Wrapper">
+            <div class="form-group met-form-choice" id="info_111Wrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">出生地</div>
                     <div class="col-md-9">
-                        <input id="info_107" type="text" name="info_106" class="form-control" value="" placeholder="手机号">
-                        <span class="help-block">请输入出生地</span>
+                        <input id="info_107" type="text" name="info_111" class="form-control" value="" placeholder="出生地"
+                            data-bv-message="出生地输入有误"
+                            required
+                            data-bv-notempty-message="请输入出生地"
+                        >
                     </div>
                 </div>
             </div>
@@ -157,8 +178,13 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">生日</div>
                     <div class="col-md-9">
-                        <input id="info_108" type="text" name="info_106" class="form-control" value="" placeholder="手机号">
-                        <span class="help-block">请输入生日</span>
+                        <input id="info_108" type="text" name="info_108" class="form-control" value="" placeholder="生日"
+                            data-bv-message="生日输入有误"
+                            required
+                            data-bv-notempty-message="请输入生日"
+                            data-bv-regexp-message="生日格式有误"
+                            pattern="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)"
+                        >
                     </div>
                 </div>
             </div>
@@ -166,12 +192,24 @@
 
             <div class="form-group met-form-choice" id="info_110Wrapper">
                 <div class="row">
-                    <div class="met-form-file-title col-md-3" style="position: relative;">
-                        <input type="checkbox" style="position: absolute;top:0;right: 0;">
+
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <div class="checkbox">
+                            <input type="checkbox" name="acceptTerms" required
+                                   data-bv-message="请同意协议"
+                                   data-bv-notempty-message="请同意协议"/> 我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+                        </div>
+                    </div>
+                    <%--<div class="met-form-file-title col-md-3" style="position: relative;">
+                        <input type="checkbox" style="position: absolute;top:0;right: 0;"
+                               required
+                               data-bv-message="请同意协议"
+                               data-bv-notempty-message="请同意协议"
+                        >
                     </div>
                     <div class="col-md-9">
                         我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
 
@@ -188,7 +226,7 @@
 
 
 
-            <button class="btn btn-lg btn-primary btn-block" onclick="sitt();" type="button">立即注册</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
             <div class="login_link"><a href="./login.jsp">已有账号？</a></div>
         </form>
     </div>
@@ -199,35 +237,17 @@
 
 </footer>
 <script src="./js/jquery-3.2.1.js"></script>
-<script src="./js/input_check.js"></script>
+<script src="./js/bootstrapValidator.js"></script>
 <script>
 
     $(function () {
-        //var checkIds = ['username','username','password','realname','idCard','phonenum','email','birthplace','birth'];
-       /* addHelper2('username');
-        addHelper2('password');
-        addHelper2('realname');
-        addHelper2('idCard','idCard');
-        addHelper2('phonenum');
-        addHelper2('email');
-        addHelper2('birthplace');
-        addHelper2('birth');
-*/
-        /*$("#reg").click(function () {
-            for(var i=0;i<checkIds.length;i++){
-                if($('#'+checkIds[i]).val().length==0){
-                    $('#'+checkIds[i]).parent().addClass('error');
-                }
+        $('#reg_form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
             }
-            alert("注册失败");
-        })*/
-
-        addHelper('info_100');
-        addHelper('info_103','idCard');
-        addHelper('info_106');
-        addHelper('info_107');
-        addHelper('info_108');
-        addHelper('info_109');
+        });
     });
 
 </script>

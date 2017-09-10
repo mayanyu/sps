@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/metinfo(2).css">
     <link rel="stylesheet" type="text/css" href="./css/metinfo(1).css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrapValidator.min.css">
     </head>
 
 <body>
@@ -35,15 +36,21 @@
 
 <div class="register_index met-member">
     <div class="container">
-        <form class="form-register met-form bv-form" novalidate="novalidate">
+        <form id="reg_form" class="form-register met-form bv-form" novalidate="novalidate">
 
 
             <div class="form-group met-form-choice" id="usernameWrapper">
                 <div class="row">
                     <div class="met-form-file-title col-md-3">用户名</div>
                     <div class="col-md-9">
-                        <input id="username" type="text" name="username" class="form-control" value="" placeholder="用户名">
-                        <span class="help-block">请输入用户名</span>
+                        <%--<input id="username" type="text" name="username" class="form-control" value="" placeholder="用户名">
+                        <span class="help-block">请输入用户名</span>--%>
+                            <input type="text" class="form-control" name="username"
+                                   data-bv-message="用户名输入有误"
+                                   required
+                                   data-bv-notempty-message="请输入用户名"
+                                   pattern="[a-zA-Z0-9]+"
+                                   data-bv-regexp-message="用户名包含非法字符" />
                     </div>
                 </div>
             </div>
@@ -53,8 +60,11 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">密码</div>
                     <div class="col-md-9">
-                        <input id="password" type="text" name="password" class="form-control" value="" placeholder="密码">
-                        <span class="help-block">请输入密码</span>
+                        <input id="password" type="text" name="password" class="form-control" value="" placeholder="密码"
+                            data-bv-message="密码输入有误"
+                            required
+                            data-bv-notempty-message="请输入密码"
+                         >
                     </div>
                 </div>
             </div>
@@ -72,8 +82,10 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">真实姓名</div>
                     <div class="col-md-9">
-                        <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名">
-                        <span class="help-block">请输入真实姓名</span>
+                        <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
+                               data-bv-message="真实姓名输入有误"
+                               required
+                               data-bv-notempty-message="请输入真实姓名" />
                     </div>
                 </div>
             </div>
@@ -90,8 +102,12 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">身份证号</div>
                     <div class="col-md-9">
-                        <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号">
-                        <span class="help-block">请输入合法身份证号</span>
+                        <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号"
+                               data-bv-message="身份证号输入有误"
+                               required
+                               data-bv-notempty-message="请输入身份证号"
+                               pattern="(^\d{15}$)|(^\d{17}([0-9]|X)$)"
+                               data-bv-regexp-message="身份证号格式错误"   />
                     </div>
                 </div>
             </div>
@@ -108,8 +124,13 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">手机号</div>
                     <div class="col-md-9">
-                        <input id="info_106" type="text" name="info_106" class="form-control" value="" placeholder="手机号">
-                        <span class="help-block">请输入手机号</span>
+                        <input id="info_106" type="text" name="info_106" class="form-control" value="" placeholder="手机号"
+                               data-bv-message="手机号输入有误"
+                               required
+                               data-bv-notempty-message="请输入手机号"
+                               data-bv-regexp-message="手机号格式错误"
+                               pattern="^1[34578]\d{9}$"
+                        >
                     </div>
                 </div>
             </div>
@@ -126,8 +147,13 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">邮箱</div>
                     <div class="col-md-9">
-                        <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱">
-                        <span class="help-block">请输入邮箱</span>
+                        <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱"
+                               data-bv-message="邮箱输入有误"
+                               required
+                               data-bv-notempty-message="请输入邮箱"
+                               data-bv-regexp-message="邮箱格式错误"
+                               pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"
+                        >
                     </div>
                 </div>
             </div>
@@ -156,7 +182,7 @@
 
 
 
-            <button class="btn btn-lg btn-primary btn-block" onclick="sitt();" type="button">立即注册</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
             <div class="login_link"><a href="./login.jsp">已有账号？</a></div>
         </form>
     </div>
@@ -167,16 +193,17 @@
 
 </footer>
 <script src="./js/jquery-3.2.1.js"></script>
-<script src="./js/input_check.js"></script>
+<script src="./js/bootstrapValidator.js"></script>
 <script>
 
     $(function () {
-        addHelper('username');
-        addHelper('password');
-        addHelper('info_100');
-        addHelper('info_103','idCard');
-        addHelper('info_106');
-        addHelper('info_109');
+        $('#reg_form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            }
+        });
     });
 
 </script>
