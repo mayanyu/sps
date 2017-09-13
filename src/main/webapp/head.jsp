@@ -22,9 +22,8 @@
             </div>
             <div class="navbar-collapse nav-collapse collapse navbar-header" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active list"><a href="/" title="首页" class="nt"><span>首页</span><i>首页</i></a></li>
                     <li class="active dropdown list">
-                        <a href="index.jsp" class="dropdown-toggle nt now" title="直播视频"><span>直播</span><i>CASE</i></a>
+                        <a href="index.jsp" class="dropdown-toggle nt" title="直播视频"><span>首页</span><i>首页</i></a>
                         <ul class="dropdown-menu">
                             <li><a href="index.jsp?#test1" title="王者荣耀">王者荣耀</a></li>
                             <li><a href="index.jsp?#test2" title="球球大作战">球球大作战</a></li>
