@@ -275,7 +275,7 @@
                             <a class="m_gift_reward fl"></a>
                             <div class="m_gift_send_func_btn fr">
                                 <a href="login.jsp" class="m_gift_send_func_btn_send fl">赠送</a>
-                                <a href="recharge.jsp" class="m_gift_send_func_btn_recharge fl">充值</a>
+                                <%--<a href="recharge.jsp" class="m_gift_send_func_btn_recharge fl">充值</a>--%>
                             </div>
                         </div>
                     </div>

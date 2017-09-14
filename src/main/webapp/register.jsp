@@ -49,8 +49,15 @@
                                    data-bv-message="用户名输入有误"
                                    required
                                    data-bv-notempty-message="请输入用户名"
-                                   pattern="[a-zA-Z0-9]+"
-                                   data-bv-regexp-message="用户名包含非法字符" />
+                                   pattern="^[a-zA-Z0-9]+$"
+                                   data-bv-regexp-message="用户名包含非法字符"
+                                   data-bv-stringlength="true"
+                                   maxlength="12"
+                                   minlength="4"
+                                   data-bv-stringlength-message="长度为4~12个字符"
+                                   data-bv-stringlength-mix="长度小于4个字符"
+                                   data-bv-stringlength-mix="长度大于12个字符"
+                            />
                     </div>
                 </div>
             </div>
@@ -64,6 +71,13 @@
                             data-bv-message="密码输入有误"
                             required
                             data-bv-notempty-message="请输入密码"
+                               maxlength="16"
+                               minlength="8"
+                               data-bv-stringlength-message="长度为8~16个字符"
+                               data-bv-stringlength-mix="长度小于8个字符"
+                               data-bv-stringlength-mix="长度大于16个字符"
+                               pattern="((?=.*[0-9].*)(?=.*[A-Za-z].*)(?=.*_.*))[_0-9A-Za-z]"
+                               data-bv-regexp-message="必须同时包含字母、数字、下划线"
                          >
                     </div>
                 </div>
@@ -85,7 +99,10 @@
                         <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
                                data-bv-message="真实姓名输入有误"
                                required
+                               pattern="^[\u2E80-\u9FFF]+$"
+                               data-bv-regexp-message="请确保姓名为汉字"
                                data-bv-notempty-message="请输入真实姓名" />
+
                     </div>
                 </div>
             </div>
@@ -128,8 +145,9 @@
                                data-bv-message="手机号输入有误"
                                required
                                data-bv-notempty-message="请输入手机号"
-                               data-bv-regexp-message="手机号格式错误"
-                               pattern="^1[34578]\d{9}$"
+                               data-bv-phone-country="CN"
+                               data-bv-phone="true"
+                               data-bv-phone-message="手机号格式错误"
                         >
                     </div>
                 </div>
@@ -150,9 +168,9 @@
                         <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱"
                                data-bv-message="邮箱输入有误"
                                required
+                               data-bv-emailaddress="true"
+                               data-bv-emailaddress-message="邮箱格式错误"
                                data-bv-notempty-message="请输入邮箱"
-                               data-bv-regexp-message="邮箱格式错误"
-                               pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"
                         >
                     </div>
                 </div>

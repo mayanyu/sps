@@ -85,6 +85,8 @@
                         <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
                                data-bv-message="真实姓名输入有误"
                                required
+                               pattern="^[\u2E80-\u9FFF]+$"
+                               data-bv-regexp-message="请确保姓名为汉字"
                                data-bv-notempty-message="请输入真实姓名" />
                     </div>
                 </div>
@@ -129,8 +131,9 @@
                                data-bv-message="手机号输入有误"
                                required
                                data-bv-notempty-message="请输入手机号"
-                               data-bv-regexp-message="手机号格式错误"
-                               pattern="^1[34578]\d{9}$"
+                               data-bv-phone-country="CN"
+                               data-bv-phone="true"
+                               data-bv-phone-message="手机号格式错误"
                         >
                     </div>
                 </div>
@@ -151,10 +154,9 @@
                         <input id="info_109" type="text" name="info_109" class="form-control" value="" placeholder="邮箱"
                                data-bv-message="邮箱输入有误"
                                required
+                               data-bv-emailaddress="true"
+                               data-bv-emailaddress-message="邮箱格式错误"
                                data-bv-notempty-message="请输入邮箱"
-                               data-bv-regexp-message="邮箱格式错误"
-                               pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"
-
                         >
                     </div>
                 </div>
@@ -182,7 +184,7 @@
                             data-bv-message="生日输入有误"
                             required
                             data-bv-notempty-message="请输入生日"
-                            data-bv-regexp-message="生日格式有误"
+                            data-bv-regexp-message="生日格式有误，例：1990-10-16"
                             pattern="(([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))-02-29)"
                         >
                     </div>
