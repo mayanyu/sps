@@ -85,6 +85,7 @@
                         <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
                                data-bv-message="真实姓名输入有误"
                                required
+                               data-bv-notempty-message="请输入真实姓名"
 
                                data-bv-stringlength="true"
                                maxlength="4"
@@ -100,7 +101,7 @@
 
                                pattern="^[\u2E80-\u9FFF]+$"
                                data-bv-regexp-message="请确保姓名为汉字"
-                               data-bv-notempty-message="请输入真实姓名" />
+                        />
                     </div>
                 </div>
             </div>
