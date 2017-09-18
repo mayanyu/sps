@@ -122,11 +122,11 @@
                         <input id="info_103" type="text" name="info_103" class="form-control" value="" placeholder="身份证号"
                                data-bv-message="身份证号输入有误"
                                required
-                               data-bv-notempty-message="身份证号有误"
+                               data-bv-notempty-message="请输入身份证号"
 
                                data-bv-callback="true"
                                data-bv-callback-callback="checkIdNum"
-                               data-bv-callback-message="身份证号有误"
+                               data-bv-callback-message="身份证号输入有误"
                         />
                     </div>
                 </div>
