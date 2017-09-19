@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./css/metinfo(1).css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrapValidator.min.css">
+    <%--<link rel="stylesheet" href="./css/modal.css">--%>
+
     </head>
 
 <body>
@@ -67,7 +69,7 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">密码</div>
                     <div class="col-md-9">
-                        <input id="password" type="text" name="password" class="form-control" value="" placeholder="密码"
+                        <input id="password" type="password" name="password" class="form-control" value="" placeholder="密码"
                             data-bv-message="密码输入有误"
                             required
                             data-bv-notempty-message="请输入密码"
@@ -97,11 +99,29 @@
                     <div class="met-form-file-title col-md-3">真实姓名</div>
                     <div class="col-md-9">
                         <input id="info_100" type="text" name="info_100" class="form-control" value="" placeholder="真实姓名"
+
                                data-bv-message="真实姓名输入有误"
                                required
+                               data-bv-notempty-message="请输入真实姓名"
+
+                               data-bv-stringlength="true"
+                               maxlength="4"
+                               minlength="2"
+                               data-bv-stringlength-message="长度应为2~4个字符"
+                               data-bv-stringlength-mix="长度小于2个字符"
+                               data-bv-stringlength-mix="长度大于4个字符"
+
+
+                               data-bv-callback="true"
+                               data-bv-callback-callback="checkName"
+                               data-bv-callback-message="请输入真实姓名"
+
                                pattern="^[\u2E80-\u9FFF]+$"
                                data-bv-regexp-message="请确保姓名为汉字"
-                               data-bv-notempty-message="请输入真实姓名" />
+
+
+
+                        />
 
                     </div>
                 </div>
@@ -181,11 +201,13 @@
 
             <div class="form-group met-form-choice" id="info_110Wrapper">
                 <div class="row">
-                    <div class="met-form-file-title col-md-3" style="position: relative;">
-                        <input type="checkbox" style="position: absolute;top:0;right: 0;">
-                    </div>
-                    <div class="col-md-9">
-                        我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <div class="checkbox">
+                            <input type="checkbox" name="acceptTerms" required
+                                   data-bv-message="请同意协议"
+                                   data-bv-notempty-message="请同意协议"/> 我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -203,9 +225,27 @@
 
 
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
+            <button id="reg" class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
             <div class="login_link"><a href="./login.jsp">已有账号？</a></div>
         </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                注册成功，请等待审核
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -214,8 +254,28 @@
 
 </footer>
 <script src="./js/jquery-3.2.1.js"></script>
+<script src="./js/modal.js"></script>
 <script src="./js/bootstrapValidator.js"></script>
+<style>
+    .modal-dialog{
+        margin-top:200px;
+    }
+</style>
 <script>
+
+    function checkName(value){
+        if(value.length == 0){
+            return true;
+        }
+
+        var names ="赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜戚谢邹喻柏水窦章云苏潘葛奚范彭郎鲁韦昌马苗凤花方俞任袁柳酆鲍史唐费廉岑薛雷贺倪汤滕殷罗毕郝邬安常乐于时傅皮卞齐康伍余元卜顾孟平黄和穆萧尹姚邵湛汪祁毛禹狄米贝明臧计伏成戴谈宋茅庞熊纪舒屈项祝董梁杜阮蓝闵席季麻强贾路娄危江童颜郭梅盛林刁钟徐邱骆高夏蔡田樊胡凌霍虞万支柯咎管卢莫经房裘缪干解应宗宣丁贲邓郁单杭洪包诸左石崔吉钮龚程嵇邢滑裴陆荣翁荀羊於惠甄魏加封芮羿储靳汲邴糜松井段富巫乌焦巴弓牧隗山谷车侯宓蓬全郗班仰秋仲伊宫宁仇栾暴甘钭厉戎祖武符刘姜詹束龙叶幸司韶郜黎蓟薄印宿白怀蒲台从鄂索咸籍赖卓蔺屠蒙池乔阴郁胥能苍双闻莘党翟谭贡劳逄姬申扶堵冉宰郦雍却璩桑桂濮牛寿通边扈燕冀郏浦尚农温别庄晏柴瞿阎充慕连茹习宦艾鱼容向古易慎戈廖庚终暨居衡步都耿满弘匡国文寇广禄阙东殴殳沃利蔚越夔隆师巩厍聂晁勾敖融冷訾辛阚那简饶空曾毋沙乜养鞠须丰巢关蒯相查后江红游竺权逯盖益桓公万俟司马上官欧阳夏侯诸葛闻人东方赫连皇甫尉迟公羊澹台公冶宗政濮阳淳于仲孙太叔申屠公孙乐正轩辕令狐钟离闾丘长孙慕容鲜于宇文司徒司空亓官司寇仉督子车颛孙端木巫马公西漆雕乐正壤驷公良拓拔夹谷宰父谷粱晋楚阎法汝鄢涂钦段干百里东郭南门呼延归海羊舌微生岳帅缑亢况后有琴梁丘左丘东门西门商牟佘佴伯赏南宫墨哈谯笪年爱阳佟第五言福百家姓续";
+        if(names.indexOf(value[0])==-1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 
     function checkIdNum(idcode, validator){
 
@@ -273,7 +333,28 @@
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
             }
-        });
+        }).on('success.form.bv', function(e) {
+            //alert('注册成功请等待审核');
+
+            $('#myModal').modal({
+                backdrop:false
+            });
+
+            // Prevent submit form
+            e.preventDefault();
+            /*  e.preventDefault();
+
+             var $form     = $(e.target),
+                 validator = $form.data('bootstrapValidator');
+
+
+             $('#register').submit(); */
+        });;
+
+        /*$('#reg').click(function () {
+            //注册成功请等待审核
+            alert('注册成功请等待审核');
+        });*/
     });
 
 </script>
