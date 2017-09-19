@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/metinfo(2).css">
     <link rel="stylesheet" type="text/css" href="./css/metinfo(1).css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <%--<link rel="stylesheet" href="./css/modal.css">--%>
 </head>
 
 <body>
@@ -252,11 +253,34 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                注册成功,请等待审核
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="container met-footer">
     <p>北京领客先行科技有限公司&nbsp;&nbsp;&nbsp;京ICP备16037571号-1 </p>
 
 </footer>
+
+<style>
+    .modal-dialog{
+        margin-top:200px;
+    }
+</style>
 <script src="./js/jquery-3.2.1.js"></script>
+<script src="./js/modal.js"></script>
 <script src="./js/bootstrapValidator.js"></script>
 <script>
 
@@ -330,7 +354,23 @@
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
             }
-        });
+        }).on('success.form.bv', function(e) {
+            //alert('注册成功请等待审核');
+
+            $('#myModal').modal({
+                backdrop:false
+            });
+
+            // Prevent submit form
+            e.preventDefault();
+            /*  e.preventDefault();
+
+             var $form     = $(e.target),
+                 validator = $form.data('bootstrapValidator');
+
+
+             $('#register').submit(); */
+        });;
     });
 
 </script>

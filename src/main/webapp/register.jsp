@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./css/metinfo(1).css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrapValidator.min.css">
+    <%--<link rel="stylesheet" href="./css/modal.css">--%>
+
     </head>
 
 <body>
@@ -67,7 +69,7 @@
                 <div class="row">
                     <div class="met-form-file-title col-md-3">密码</div>
                     <div class="col-md-9">
-                        <input id="password" type="text" name="password" class="form-control" value="" placeholder="密码"
+                        <input id="password" type="password" name="password" class="form-control" value="" placeholder="密码"
                             data-bv-message="密码输入有误"
                             required
                             data-bv-notempty-message="请输入密码"
@@ -199,11 +201,13 @@
 
             <div class="form-group met-form-choice" id="info_110Wrapper">
                 <div class="row">
-                    <div class="met-form-file-title col-md-3" style="position: relative;">
-                        <input type="checkbox" style="position: absolute;top:0;right: 0;">
-                    </div>
-                    <div class="col-md-9">
-                        我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <div class="checkbox">
+                            <input type="checkbox" name="acceptTerms" required
+                                   data-bv-message="请同意协议"
+                                   data-bv-notempty-message="请同意协议"/> 我已阅读并同意 <a href="./agreement.jsp" target="_blank">《用户协议》</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,9 +225,27 @@
 
 
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
+            <button id="reg" class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
             <div class="login_link"><a href="./login.jsp">已有账号？</a></div>
         </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                注册成功，请等待审核
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -232,7 +254,13 @@
 
 </footer>
 <script src="./js/jquery-3.2.1.js"></script>
+<script src="./js/modal.js"></script>
 <script src="./js/bootstrapValidator.js"></script>
+<style>
+    .modal-dialog{
+        margin-top:200px;
+    }
+</style>
 <script>
 
     function checkName(value){
@@ -305,7 +333,28 @@
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
             }
-        });
+        }).on('success.form.bv', function(e) {
+            //alert('注册成功请等待审核');
+
+            $('#myModal').modal({
+                backdrop:false
+            });
+
+            // Prevent submit form
+            e.preventDefault();
+            /*  e.preventDefault();
+
+             var $form     = $(e.target),
+                 validator = $form.data('bootstrapValidator');
+
+
+             $('#register').submit(); */
+        });;
+
+        /*$('#reg').click(function () {
+            //注册成功请等待审核
+            alert('注册成功请等待审核');
+        });*/
     });
 
 </script>
