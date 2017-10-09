@@ -37,7 +37,7 @@
                 </li><li>
                 <a href="#">
                     <div class="m_type_item_pic_box">
-                        <a href="${pageContext.request.contextPath}/vidoe?zbmc=穆裕&sfzh=2322312459872****&zbms=带你超神,带你飞&zbtx=hhhh.jpg&zxrs=120万人&sp=rongyao4.mp4&fjh=1121432&jbs=3000&gzs=66"><b class="m_play-icon"></b></a>
+                        <a href="${pageContext.request.contextPath}/vidoe?zbmc=穆裕&sfzh=2322312459872****&zbms=带你超神,带你飞&zbtx=hhhh.jpg&zxrs=120万人&sp=wz2.mp4&fjh=1121432&jbs=3000&gzs=66"><b class="m_play-icon"></b></a>
                         <img src="img/khhlkhl.png" class="m_type_item_pic_main">
                         <div class="m_type_info_author">
                             <img class="m_type_info_author_photo" src="img/hhhh.jpg" >

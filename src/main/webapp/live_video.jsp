@@ -148,6 +148,7 @@
 
             <div class="m_video" style="position: relative">
                 <img src="./img/logoquan14440786348.png" width="100" height="100" alt="" style="position: absolute;top:0;right:0;width:100px;height:100px;background-color: black;">
+                <img src="./img/logoquan14440786348.png" width="100" height="100" alt="" style="position: absolute;top:0;right:750px;width:100px;height:100px;background-color: black;">
                 <video width="100%" height="100%" controls autoplay>
                     <source src="./doc/${sp}" type="video/mp4">
                 </video>
